@@ -18,9 +18,8 @@ and open the template in the editor.
             function exportar() {
                 var table = document.getElementById('tabela').outerHTML;
                 table = minifyHtml(table);
-                document.convertXls.filename.value = "astarquivo";
-                document.convertXls.html.value = table;
 
+                document.convertXls.html.value = table;
                 document.convertXls.action = "xlsexport/Conversor.php";
                 document.convertXls.submit();
             }
@@ -28,7 +27,6 @@ and open the template in the editor.
     </head>
     <body>
         <form name="convertXls" method="post">
-            <input type="hidden" name="filename">
             <input type="hidden" name="html">
         </form>
 
@@ -78,7 +76,7 @@ and open the template in the editor.
                 </tr>
             </tbody>
         </table>
-        
+
         <button type="button" onclick="exportar();">Click</button>
     </body>
 </html>

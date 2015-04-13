@@ -24,7 +24,7 @@ class Motor {
 
     function __construct($html) {
         //Starta a API
-        $this->iniciarApi($html);
+        $this->iniciarApi();
         $this->html = $html;
     }
 
@@ -32,8 +32,8 @@ class Motor {
      * Inicializacao da API
      */
 
-    private function iniciarApi($html) {
-
+    private function iniciarApi() {
+        
         $this->objPHPExcel = new PHPExcel();
         $this->setAlfa();
     }
