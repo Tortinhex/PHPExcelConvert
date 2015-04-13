@@ -11,12 +11,13 @@ COMO IMPORTAR
 Copie a pasta xlsexport para dentro da pasta do seu projeto. Na pagina HTML que contém a tabela, copie o seguinte código na seção de script:
 
 function exportar() {
-    /*Copia o HTML da tabela para variavel*/
+    
+    //Copia o HTML da tabela para variavel
     var table = document.getElementById('tabela').outerHTML;
-    /*Retira qualquer espaco e quebra de linha*/
+    //Retira qualquer espaco e quebra de linha
     table = table.replace(/[\r\t\n]|  /g, '');
     
-    /*Cria um form na pagina*/
+    //Cria um form na pagina
     var frag = document.createDocumentFragment();
     var form = document.createElement("form");
     form.name="convertXls";
@@ -30,7 +31,7 @@ function exportar() {
     frag.appendChild(form);
     document.body.appendChild(frag);
 
-    /*Submit*/
+    //Submit
     document.convertXls.html.value = table;
     document.convertXls.action = "xlsexport/Conversor.php";
     document.convertXls.submit();
