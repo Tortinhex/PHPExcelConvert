@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script>
+            function minifyHtml(html) {
+                return html.replace(/[\r\t\n]|  /g, '');
+            }
+
+            function exportar() {
+                var table = document.getElementById('tabela').outerHTML;
+                table = minifyHtml(table);
+                document.convertXls.filename.value = "astarquivo";
+                document.convertXls.html.value = table;
+
+                document.convertXls.action = "xlsexport/Conversor.php";
+                document.convertXls.submit();
+            }
+        </script>
+    </head>
+    <body>
+        <form name="convertXls" method="post">
+            <input type="hidden" name="filename">
+            <input type="hidden" name="html">
+        </form>
+
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>titulo 1 jqhfjqehfjhejqh</th>
+                    <th>titulo 2</th>
+                    <th>titulo 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>dado 1</td>
+                    <td>dado 2</td>
+                    <td>dado 3</td>
+                </tr>
+                <tr>
+                    <td>dado 1</td>
+                    <td>dado 2</td>
+                    <td>dado 3</td>
+                </tr>
+                <tr>
+                    <td>dado 1</td>
+                    <td>dado 2</td>
+                    <td>dado 3</td>
+                </tr>
+                <tr>
+                    <td>dado 1</td>
+                    <td>dado 2</td>
+                    <td>dado 3</td>
+                </tr>
+                <tr>
+                    <td>dado 1</td>
+                    <td>dado 2</td>
+                    <td>dado 3</td>
+                </tr>
+                <tr>
+                    <td>dado 1</td>
+                    <td>dado 2</td>
+                    <td>dado 3</td>
+                </tr>
+                <tr>
+                    <td>dado 1</td>
+                    <td>dado 2</td>
+                    <td>dado 3</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <button type="button" onclick="exportar();">Click</button>
+    </body>
+</html>
