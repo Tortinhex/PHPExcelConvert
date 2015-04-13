@@ -15,17 +15,17 @@ function exportar() {
     var table = document.getElementById('tabela').outerHTML;
     /*Retira qualquer espaco e quebra de linha*/
     table = table.replace(/[\r\t\n]|  /g, '');
-
+    
     /*Cria um form na pagina*/
     var frag = document.createDocumentFragment();
-    var form = document.createElement('<form>');
+    var form = document.createElement("form");
     form.name="convertXls";
     form.method="post";
                 
-    var input = document.createElement("<input>");
+    var input = document.createElement("input");
     input.type="hidden";
     input.name="html";
-            
+                
     form.appendChild(input);
     frag.appendChild(form);
     document.body.appendChild(frag);
@@ -34,8 +34,8 @@ function exportar() {
     document.convertXls.html.value = table;
     document.convertXls.action = "xlsexport/Conversor.php";
     document.convertXls.submit();
-  }
-            
+}
+
 OBS: O método acima deve ser chamado por um botao:
   <button type="button" onclick="exportar();">Click</button>
 
